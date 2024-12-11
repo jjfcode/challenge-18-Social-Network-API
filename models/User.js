@@ -28,7 +28,7 @@ const userSchema = new Schema(
     friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'user',
       },
     ],
   },
@@ -47,14 +47,8 @@ userSchema
   .virtual('friendsCount')
   // Getter
   .get(function () {
-    return `${this.first} ${this.last}`;
+    return `${this.friends.length}`;
   })
-  // Setter to set the first and last name
-  .set(function (v) {
-    const first = v.split(' ')[0];
-    const last = v.split(' ')[1];
-    this.set({ first, last });
-  });
 
 // Initialize our User model
 const User = model('user', userSchema);
