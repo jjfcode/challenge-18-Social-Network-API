@@ -18,6 +18,9 @@ const responseSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: (date) => {
+        return date.toLocaleString()
+      },
     },
   },
   {
