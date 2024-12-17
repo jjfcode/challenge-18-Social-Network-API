@@ -82,4 +82,4 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## Questions
 
-If you have any questions, please open an issue or contact me directly at [your-email@example.com].
+If you have any questions, please open an issue or contact me directly at [johnferlito73@gmail.com].
