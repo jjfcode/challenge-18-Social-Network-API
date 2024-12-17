@@ -44,6 +44,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  // update a thought
   async updateThought(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
@@ -62,6 +63,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  // delete a thought
   async deleteThought(req, res) {
     try {
       const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
@@ -81,12 +83,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Add a video response
+  // Add a Reaction response
   async addReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $addToSet: { reactions: req.body } },
+        { $addToSet: { reactions: req.params.thoughtId } },
         { runValidators: true, new: true }
       );
 
@@ -99,12 +101,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Remove video response
+  // Remove Reaction response
   async removeReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $pull: { reactions: { reactionId: req.params.reactionId } } },
+        { $pull: { reactions: req.params.reactionId } },
         { runValidators: true, new: true }
       )
 
