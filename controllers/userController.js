@@ -1,10 +1,9 @@
 const User = require('../models/User');
-const { use } = require('../routes/api/userRoutes');
 
 module.exports = {
   async getUsers(req, res) {
     try {
-      const users = await User.find();
+      const users = await User.find().populate("thoughts").populate("friends");
       res.json(users);
     } catch (err) {
       res.status(500).json(err);
@@ -55,7 +54,7 @@ module.exports = {
   // delete a user
   async deleteUser(req, res) {
     try {
-      const thought = await Thought.findOneAndRemove({ _id: req.params.userId });
+      const user = await User.findOneAndDelete({ _id: req.params.userId });
 
       if (!user) {
         return res.status(404).json({ message: 'No user with this id!' });
@@ -71,7 +70,7 @@ module.exports = {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $addToSet: { friends: req.body } },
+        { $addToSet: { friends: req.params.friendId } },
         { runValidators: true, new: true }
       );
 
@@ -89,7 +88,7 @@ module.exports = {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $pull: { friends: { reactionId: req.params.friendId } } },
+        { $pull: { friends: req.params.friendId } },
         { runValidators: true, new: true }
       )
 
