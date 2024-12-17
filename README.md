@@ -70,7 +70,7 @@ This is a social network API built using Node.js, Express, and MongoDB. It allow
 ### Friends
 
 - `POST /api/users/:userId` - Create a friend
-- `DELETE /api/users/:userId` - DELETE a reaction
+- `DELETE /api/users/:userId` - DELETE a friend
 
 ## License
 
