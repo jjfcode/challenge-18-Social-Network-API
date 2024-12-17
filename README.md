@@ -62,6 +62,16 @@ This is a social network API built using Node.js, Express, and MongoDB. It allow
 - `POST /api/thoughts/:thoughtId/reaction` - Add a reaction to a thought
 - `DELETE /api/thoughts/:thoughtId/reaction/:reactionId` - Remove a reaction from a thought
 
+### Reactions
+
+- `POST /api/thoughts/:thoughtId/reaction` - Create a reaction
+- `DELETE /api/thoughts/:thoughtId/reaction/:reactionsId` - DELETE a reaction
+
+### Friends
+
+- `POST /api/users/:userId` - Create a friend
+- `DELETE /api/users/:userId` - DELETE a reaction
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](http://_vscodecontentref_/1) file for details.
