@@ -9,6 +9,8 @@ This is a social network API built using Node.js, Express, and MongoDB. It allow
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Routes](#api-routes)
+- [Repo](#repo)
+- [Video](#video)
 - [License](#license)
 - [Contributing](#contributing)
 - [Questions](#questions)
@@ -71,6 +73,14 @@ This is a social network API built using Node.js, Express, and MongoDB. It allow
 
 - `POST /api/users/:userId` - Create a friend
 - `DELETE /api/users/:userId` - DELETE a friend
+
+## **Repo:**
+
+[Github Repo](https://github.com/jjfcode/challenge-18-Social-Network-API)
+
+## **Video:**
+
+[Video](https://drive.google.com/file/d/1Q6Ffuez1kL4lLniaAUG4iQ9dlkv3HptO/view?usp=sharing)
 
 ## License
 
